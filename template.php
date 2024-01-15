@@ -37,13 +37,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a href="" class="nav-link"></a></a>
+                <a href="" class="nav-link"></a>Dashboard</a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link"></a>
+                <a href="" class="nav-link">shop</a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link"></a>
+                <a href="" class="nav-link">inbox</a>
               </li>
               <li class="nav-item">
                 <a href="" class="nav-link"></a>
