@@ -11,16 +11,16 @@
           <a class="nav-link" href="../berada.php">Dashboard</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link" href="admin.php">Admin</a>
+          <a class="nav-link" href="../main/admin.php">Admin</a>
         </li> 
         <li class="nav-item">
           <a class="nav-link" href="../produk/produk.php">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../size/size.php">Size</a>
+          <a class="nav-link" href="size.php">Size</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="inbox.php">Inbox</a>
+          <a class="nav-link" href="../inbox.php">Inbox</a>
         </li>
       
       </ul>

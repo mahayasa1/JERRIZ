@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../beranda.php">JERIZZ</a>
+    <a class="navbar-brand" href="beranda.php">JERIZZ</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,16 +8,16 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" href="../berada.php">Dashboard</a>
+          <a class="nav-link" href="beranda.php">Dashboard</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link" href="admin.php">Admin</a>
+          <a class="nav-link" href="main/admin.php">Admin</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link" href="../produk/produk.php">Shop</a>
+          <a class="nav-link" href="produk/produk.php">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../size/size.php">Size</a>
+          <a class="nav-link" href="size/size.php">Size</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="inbox.php">Inbox</a>

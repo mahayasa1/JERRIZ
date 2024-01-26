@@ -34,7 +34,7 @@
 <body>
     
     <!-- Daftarmenu -->
-    <?php include "main/menu.php" ?>
+    <?php include "menu.php" ?>
     <!-- Daftarmenu -->
 
 <div class="container">
@@ -49,7 +49,6 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>ID</th>
                 <th>Product</th>
                 <th>Price</th>
                 <th>Stock</th>
@@ -58,7 +57,7 @@
         </thead>
         <tbody>
         <?php
-        include "koneksi.php";
+        include "../koneksi.php";
             $no = 1;
             $query = "SELECT * FROM tb_produk";
             $data = mysqli_query($koneksi, $query);
@@ -66,21 +65,18 @@
             ?>
             <tr>
                 <td> <?php echo $no++ ?></td>
-                <td><?= $row['id_produk'] ?></td>
                 <td><?= $row['nama_produk'] ?></td>
                 <td><?= $row['price'] ?></td>
                 <td><?= $row['stok'] ?></td>
                 <td>
-                    <a href="produk_edit.php?id=<?= $row['stok'] ?>" class="btn btn-success btn-sm">Edit</a>
-
-                    <a href="produk_delete.php?id=<?= $row['stok'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Ingin Hapus Data Ini?')">Delete</a>
+                    <a href="produk_edit.php?id=<?= $row['id_produk'] ?>" class="btn btn-success btn-sm">Edit</a>
+                    <a href="produk_delete.php?id=<?= $row['id_produk'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Ingin Hapus Data Ini?')">Delete</a>
                 </td>
             </tr>
             <?php } ?>
             <tfoot>
             <tr>
                 <th>No</th>
-                <th>stok</th>
                 <th>Product</th>
                 <th>Price</th>
                 <th>Stock</th>

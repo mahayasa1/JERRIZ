@@ -1,3 +1,8 @@
+<?php 
+
+    include "../koneksi.php"
+ 
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -39,39 +44,56 @@
         <br>
         <h3 class="text-center"> Halaman Admin</h3>
         <br>
-        <a href="mhs_tambah.php" class="btn btn-primary">Tambah</a> <br><br>
+        <a href="admin_tambah.php" class="btn btn-primary">Tambah</a> <br><br>
         <table id="example" class="display nowrap" style="width:100%">
         <thead>
             <tr>
+                <th>No</th>
                 <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Email</th>
+                <th>Level</th>
+                <th>Option</th>
             </tr>
         </thead>
         <tbody>
+            <?php
+            
+            $no = 1;
+            $query = "SELECT * FROM tb_admin";
+            $data = mysqli_query($koneksi, $query);
+            while ($row = mysqli_fetch_array($data)) {
+            ?>
+
             <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
+                <td><?= $no++?></td>
+                <td><?= $row['nama']?></td>
+                <td><?= $row['email']?></td>
+                <td> 
+                    <?php 
+                    if ($row['level'] == 0) {
+                        echo "Admin";
+                    } else {
+                        echo "pegawai";
+                    }
+                    
+                ?>
+                </td>
                 <td>
-                    <a href="edit.php" class="btn btn-success btn-sm">Edit</a>
-                    <a href="hapus.php" class="btn btn-danger btn-sm">Hapus</a>
+                    <a href="edit.php?id=<?= $row['id_admin']?>" class="btn btn-success btn-sm">Edit</a>
+                    <a href="hapus.php?id=<?= $row['id_admin']?>" class="btn btn-danger btn-sm">Hapus</a>
                 </td>
             </tr>
+            <?php
+            }
+            ?>
         </tbody>
         <tfoot>
             <tr>
+                <th>No</th>
                 <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Email</th>
+                <th>Level</th>
+                <th>Option</th>
             </tr>
         </tfoot>
     </table>

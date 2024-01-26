@@ -8,13 +8,13 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" href="../berada.php">Dashboard</a>
+          <a class="nav-link" href="../beranda.php">Dashboard</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link" href="admin.php">Admin</a>
+          <a class="nav-link" href="../main/admin.php">Admin</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link" href="../produk/produk.php">Shop</a>
+          <a class="nav-link" href="produk.php">Shop</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../size/size.php">Size</a>
