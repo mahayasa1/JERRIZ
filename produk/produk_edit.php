@@ -10,7 +10,7 @@
   <body>
   
 <!-- Daftar Menu -->      
-<?php include "main/menu.php" ?>
+<?php include "menu.php" ?>
 <!-- Daftar Menu -->
 
 <div class="container">
@@ -26,6 +26,12 @@
   ?>
 
  <form action="produk_tambah_proses.php" method="post" enctype="multipart/form-data">
+   <div class="mb-3 row">
+     <label for="nama_produk" class="col-sm-2 col-form-label">Products</label>
+     <div class="col-sm-10">
+       <input type="text" class="form-control" id="nama_produk" name="nama_produk" required>
+     </div>
+   </div>
   <div class="mb-3 row">
     <label for="price" class="col-sm-2 col-form-label">price</label>
     <div class="col-sm-10">
@@ -33,9 +39,9 @@
     </div>
   </div>
   <div class="mb-3 row">
-    <label for="nama_produk" class="col-sm-2 col-form-label">Products</label>
+    <label for="stok" class="col-sm-2 col-form-label">Stok</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="nama_produk" name="nama_produk" required>
+      <input type="text" class="form-control" id="stok" name="stok" required>
     </div>
   </div>
     <div class="col-sm-10">
