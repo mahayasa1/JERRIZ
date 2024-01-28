@@ -1,13 +1,13 @@
 <?php
 session_start();
-include "koneksi.php";
+include "../koneksi.php";
 cekCookies();
 cekSession();
 levelAdmin();
 
-$kd_size    = $_POST['$kd_size'];
+$kd_size    = $_POST['kd_size'];
 $width      = $_POST['width'];
-$height     = $_POST['$height'];
+$height     = $_POST['height'];
 
 $query = "INSERT INTO tb_size(kd_size, width, height)
             VALUES ('$kd_size', '$width', '$height')";

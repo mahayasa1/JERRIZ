@@ -5,8 +5,8 @@ include 'koneksi.php';
 $email = $_POST['email'];
 $password = md5($_POST['password']);
  
-$query = "SELECT * FROM tb_adimn WHERE email='$email' AND password='$password'";
-$data = mysqli_query($koneksi,$query);
+$query = "SELECT * FROM tb_admin WHERE email='$email' AND password='$password'";
+$data = mysqli_query($koneksi, $query);
 $row = mysqli_fetch_assoc($data);
 $count = mysqli_num_rows($data);
 
@@ -15,7 +15,7 @@ if ($count == 0) {
 } else {
     $_SESSION = array(
         'id_user'   =>$row['id_user'],
-        'username'  =>$row['username'],
+        'nama'      =>$row['nama'],
         'level'     =>$row['level']
     );
 

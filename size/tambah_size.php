@@ -1,5 +1,3 @@
-<?php include "../koneksi.php";?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,38 +20,23 @@
   <br>
   <br>
   <br>
-  <form action="produk_tambah_proses.php" method="post" enctype="multipart/form-data">
+  <form action="tambah_size_proses.php" method="post" enctype="multipart/form-data">
     <div class="mb-3 row">
-      <label for="nama_produk" class="col-sm-2 col-form-label">Products</label>
+      <label for="kd_size" class="col-sm-2 col-form-label">Kode Size</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="nama_produk" name="nama_produk" required>
+        <input type="text" class="form-control" id="kd_size" name="kd_size" required>
       </div>
     </div>
-    <div class="mb-3 row">
-    <label for="kd_size" class="col-sm-2 col-form-label">Size</label>
+  <div class="mb-3 row">
+    <label for="width" class="col-sm-2 col-form-label">Width</label>
     <div class="col-sm-10">
-    <select class="form-select" aria-label="Default select example" id="kd_size" name="kd_size" required>
-  <option value="" hidden>~ Pilih Size ~</option>
-  <?php
-  $query = "SELECT * FROM tb_size";
-  $data = mysqli_query($koneksi, $query);
-  while ($row = mysqli_fetch_assoc($data)) {
-    ?>
-    <option value="<?= $row['id_size'] ?>"><?= $row['kd_size'] ?></option>
-  <?Php } ?>
-</select>
+      <input type="text" class="form-control" id="width" name="width" required>
     </div>
   </div>
   <div class="mb-3 row">
-    <label for="price" class="col-sm-2 col-form-label">price</label>
+    <label for="height" class="col-sm-2 col-form-label">Height</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="price" name="price" required>
-    </div>
-  </div>
-  <div class="mb-3 row">
-    <label for="stok" class="col-sm-2 col-form-label">Stok</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="stok" name="stok" required>
+      <input type="text" class="form-control" id="height" name="height" required>
     </div>
   </div>
 

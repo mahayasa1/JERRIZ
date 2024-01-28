@@ -1,9 +1,8 @@
 <?php
 session_start();
-include "koneksi.php";
+include "../koneksi.php";
 cekCookies();
 cekSession();
-levelAdmin();
 
 $id         = $_POST['id'];
 $kd_size    = $_POST['kd_size'];

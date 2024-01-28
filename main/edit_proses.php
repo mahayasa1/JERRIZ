@@ -6,9 +6,9 @@ cekSession();
 levelAdmin();
 
 $id         = $_POST['id'];
-$nama   = $_POST['nama'];
+$nama       = $_POST['nama'];
 $email      = $_POST['email'];
-$pass  = md5($_POST['password']);
+$pass       = md5($_POST['password']);
 $level      = $_POST['level'];
 
 $query = "UPDATE tb_admin
