@@ -31,13 +31,13 @@ cekCookies();
         <input type="text" class="form-control" id="nama_produk" name="nama_produk" required>
       </div>
     </div>
-  <div class="mb-3 row">
+  <!-- <div class="mb-3 row">
     <label for="filegambar" class="col-sm-2 col-form-label">Foto Produk</label>
     <div class="col-sm-10">
       <img src="" alt="" id="preview" height="30%">
       <input type="file" class="form-control" id="filegambar" name="filegambar" accept=".jpg, .jpeg, .png">
     </div>
-  </div>
+  </div> -->
     <div class="mb-3 row">
     <label for="kd_size" class="col-sm-2 col-form-label">Size</label>
     <div class="col-sm-10">

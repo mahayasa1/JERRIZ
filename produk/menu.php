@@ -22,7 +22,7 @@
           <a class="nav-link" href="../size/size.php">Size</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="inbox.php">Inbox</a>
+          <a class="nav-link" href="../inbox/pesan.php">Inbox</a>
         </li>
       
       </ul>

@@ -1,12 +1,11 @@
 <?php 
 session_start();
 include "../koneksi.php";
-cekSession();
 cekCookies();
+cekSession();
 ?>
 <!doctype html>
 <html lang="en">
-<body style="background-color: linear-gradient(to bottom right, red, yellow);">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,79 +34,75 @@ cekCookies();
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
   <!-- DataTables -->
-
 </head>
-<body>
-    
-    <!-- Daftarmenu -->
-    <?php include "menu.php" ?>
-    <!-- Daftarmenu -->
+  <body>
+  
+  <!-- Daftar Menu -->
+  <?php include "menu.php" ?>
+  <!-- Daftar Menu -->
 
 <div class="container">
+<br>
   <svg xmlns="http://www.w3.org/2000/svg" style="margin-left: 23%; margin-top: 1%" width=50% height=50% viewBox="0 0 715.18 177.05"><defs><style>.cls-1{fill:#000000;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M323.9,52.5c22.45-.25,41.49,19.26,41.17,42.53a42,42,0,0,1-6.57,23,41.24,41.24,0,0,1-17.18,15.4L365.07,165H319.85l-20.51-27.46H261.42V165H219V52.5ZM261.42,85.41v19.17H313.2a8.81,8.81,0,0,0,6.57-2.76,9.66,9.66,0,0,0-6.57-16.41Z"/><path class="cls-1" d="M184.09,15.82c-.08,1-1,1.47-2.7,1.73-9.17,1.42-39.87-5-63.33,13-45.29,34.63-13.6,121.89-55.65,142.77-.92.46-12.52,6-25.68,2.76-8-2-15-6.87-20.6-12.94C2.51,148.38-3.3,126.63,1.88,121.91s17.78,12.35,35.46,9.48C66.81,126.6,91.51,69.23,79.16,43a23.77,23.77,0,0,0-3-4.84C68.86,29.05,56,28,47.17,26.89,42,26.23,38.24,25.55,38,23.16,37.16,16.48,64.76,5.21,94.21,1.45,141.17-4.55,184.65,9.59,184.09,15.82Z"/><path class="cls-1" d="M111.75,52.49c-4.29,5.57-10.18,15.58-13.92,42.68-2.28,16.52-1.89,20.16-3.9,35.27-.63,4.74-2.7,24.21-8.91,34.5l125.62.09V136.14l-85,0V121.74h85v-26h-85V81.3h85V52.5Z"/><path class="cls-1" d="M415.27,52.33V164.86H372.81V52.33Z"/><path class="cls-1" d="M424.23,88.17V52.5H565V88.17l-74.31,41.11H565V165H424.23V129.28L496,88.17Z"/><path class="cls-1" d="M574.41,88.42V52.75H715.18V88.42l-74.32,41.11h74.32v35.75H574.41V129.53l71.72-41.11Z"/></g></g></svg>
-
-  <h3 class="text-center"></h3>
   <br>
-  <a href="tambah_produk.php" class="btn btn-primary">Add</a>
-  
-  <table id="example" class="display nowrap" style="width:100%">
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Product</th>
-                <!-- <th>Picture</th> -->
-                <th>Size</th>
-                <th>Price</th>
-                <th>Stock</th>
-                <th>Option</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $no = 1;
-            $query = "SELECT 
-                            tb_produk.id_produk,
-                            tb_produk.nama_produk,
-                            -- tb_produk.foto,
-                            tb_size.kd_size,
-                            tb_produk.price,
-                            tb_produk.stok       
-                        FROM tb_produk
-                        INNER JOIN tb_size
-                        ON tb_produk.kd_size = tb_size.id_size";
-            $data = mysqli_query($koneksi, $query);
-            while ($row = mysqli_fetch_assoc($data)) {
-            ?>
-            <tr>
-                <td> <?php echo $no++ ?></td>
-                <td><?= $row['nama_produk'] ?></td>
-                <!-- <td><img src="img/<?=$row['foto']?>" width="100"></td> -->
-                <td><?= $row['kd_size'] ?></td>
-                <td><?= $row['price'] ?></td>
-                <td><?= $row['stok'] ?></td>
-                <td>
-                    <a href="produk_edit.php?id=<?= $row['id_produk'] ?>" class="btn btn-success btn-sm">Edit</a>
-                    <a href="produk_delete.php?id=<?= $row['id_produk'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin Ingin hapus data ini?')">Delete</a>
-                </td>
-            </tr>
-        <?php } ?>
-            <tfoot>
-            <tr>
-                <th>No</th>
-                <th>Product</th>
-                <!-- <th>Picture</th> -->
-                <th>size</th>
-                <th>Price</th>
-                <th>Stock</th>
-                <th>Option</th>
-            </tr>
-        </tfoot>
-    </table>
+  <?php 
+
+  $id = $_GET['id'];
+  $query = "SELECT * FROM tb_upload WHERE id_upload = '$id'";
+  $data = mysqli_query($koneksi, $query);
+  $row = mysqli_fetch_assoc($data);
+  ?>
+    <h3 class="text-center">Formulir Edit Dokumen</h3>
+    <br>
+    <form id="uploadForm" action="pesan_edit_proses.php" method="post" enctype="multipart/form-data">
+        <div class="mb-3 row">
+            <label for="judul" class="col-sm-2 col-form-label"> Judul Dokumen</label>
+            <div class="col-sm-10">
+                <input type="text" name="judul" id="judul" class="form-control" value="<?= $row['judul_dokumen']?>" required>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="keterangan" class="col-sm-2 col-form-label">keterangan</label>
+            <div class="col-sm-10">
+                <textarea name="keterangan" id="keterangan" rows="3" <?= $row['keterangan']?> class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="file" class="col-sm-2 col-form-label">Upload Dokumen</label>
+            <div class="col-sm-10">
+            <a href="upload/<?= $row['$nama_file']?>" target="_blank">
+                <?= $row['judul_dokumen']?>
+                </a> 
+                <input type="file" name="file" id="file" class="form-control" accept=".docx, .pdf">
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <input type="hidden" name="id" value="<?= $id ?>">
+      <button type="submit" class="btn btn-primary" name="kirim">Add</button>
+      <button type="reset" class="btn btn-secondary" name="reset">Reset</button>
+    </div>
+    </form>
 </div>
 
-</body>
-</html>
+<script>
+    document.getElementById('uploadForm').addEventListener('submit', function(event) {
+        var input = document.getElementById('file');
+        if (input.files.length > 0) {
+            var fileSize = input.files[0].size; // Ukuran file dalam byte
+// Batasan ukuran file (dalam byte)
+            var maxSize = 5 * 1024 * 1024; // Contoh: Batasan 5MB
+            
+            if (fileSize > maxSize) {
+                event.preventDefault(); // Menghentikan pengiriman form
+                alert('Ukuran file terlalu besar! Maksimum 5MB');
+            }
+        }
+    });
+</script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
 <link href="https://cdn.datatables.net/v/dt/jq-3.7.0/dt-1.13.7/datatables.min.css" rel="stylesheet">
  
 <script src="https://cdn.datatables.net/v/dt/jq-3.7.0/dt-1.13.7/datatables.min.js"></script>

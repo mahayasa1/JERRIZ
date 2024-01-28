@@ -8,26 +8,26 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" href="../berada.php">Dashboard</a>
+          <a class="nav-link" href="../beranda.php">Dashboard</a>
         </li> 
         <?php if ($_SESSION['level'] == 0) {?>
         <li class="nav-item">
           <a class="nav-link" href="../main/admin.php">Admin</a>
-        </li>
-        <?php }?> 
+        </li> 
+        <?php } ?>
         <li class="nav-item">
           <a class="nav-link" href="../produk/produk.php">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="size.php">Size</a>
+          <a class="nav-link" href="../size/size.php">Size</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../inbox/pesan.php">Inbox</a>
+          <a class="nav-link" href="pesan.php">Inbox</a>
         </li>
       
       </ul>
       <div class="d-flex" role="search">
-        <a class="btn btn btn-danger" onclick="return confirm('Yakin Ingin Logout?')" href="../logout.php">Logout</a>
+        <a class="btn btn btn-danger" onclick="return confirm('Yakin Ingin Logout?')" href="logout.php">Logout</a>
       </div>
     </div>
   </div>
