@@ -1,5 +1,8 @@
 <?php
+session_start();
 include "../koneksi.php";
+cekSession();
+cekCookies();
 
 $id               = $_POST['id'];
 $price            = $_POST['price'];

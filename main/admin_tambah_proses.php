@@ -1,5 +1,9 @@
 <?php
+session_start();
 include "../koneksi.php";
+cekSession();
+cekCookies();
+levelAdmin();
 
 $nama       = $_POST['nama'];
 $email      = $_POST['email'];

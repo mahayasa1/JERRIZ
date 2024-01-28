@@ -1,6 +1,9 @@
 <?php
 
+session_start();
 include "../koneksi.php";
+cekSession();
+cekCookies();
 
 $id     = $_GET['id'];
 

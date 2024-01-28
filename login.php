@@ -14,15 +14,14 @@ if ($count == 0) {
     header("location:index.php?pesan=notfound");
 } else {
     $_SESSION = array(
-        'id_user'   =>$row['id_user'],
+        'id_admin'   =>$row['id_admin'],
         'nama'      =>$row['nama'],
         'level'     =>$row['level']
     );
 
     $expired = time() + 60 * 60;
-    setcookie("id_user", $row['id_user'], $expired, '/');
+    setcookie("id_admin", $row['id_admin'], $expired, '/');
 
     header("location:beranda.php");
 }
- 
 ?>

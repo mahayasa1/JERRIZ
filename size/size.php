@@ -1,7 +1,8 @@
 <?php 
-
-    include "../koneksi.php"
- 
+session_start();
+include "../koneksi.php";
+cekCookies();
+cekSession();
 ?>
 <!doctype html>
 <html lang="en">

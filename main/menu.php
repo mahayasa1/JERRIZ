@@ -9,10 +9,12 @@
 
         <li class="nav-item">
           <a class="nav-link" href="../beranda.php">Dashboard</a>
-        </li> 
+        </li>
+        <?php if ($_SESSION['level'] == 0) {?>
         <li class="nav-item">
           <a class="nav-link" href="admin.php">Admin</a>
         </li> 
+        <?php } ?>
         <li class="nav-item">
           <a class="nav-link" href="../produk/produk.php">Shop</a>
         </li>
@@ -25,7 +27,7 @@
       
       </ul>
       <div class="d-flex" role="search">
-        <a class="btn btn btn-danger" href="logout.php">Logout</a>
+        <a class="btn btn btn-danger" onclick="return confirm('Yakin Ingin Logout?')" href="../logout.php">Logout</a>
       </div>
     </div>
   </div>

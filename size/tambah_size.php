@@ -1,3 +1,9 @@
+<?php 
+session_start();
+include "../koneksi.php";
+cekCookies();
+cekSession();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -41,8 +47,8 @@
   </div>
 
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Add</button>
-      <button type="reset" class="btn btn-secondary">Reset</button>
+      <button type="submit" class="btn btn-primary" name="kirim">Add</button>
+      <button type="reset" class="btn btn-secondary" name="reset">Reset</button>
     </div>
   </form>
 </div>

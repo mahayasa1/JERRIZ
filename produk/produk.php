@@ -1,10 +1,16 @@
+<?php 
+session_start();
+include "../koneksi.php";
+cekSession();
+cekCookies();
+?>
 <!doctype html>
 <html lang="en">
 <body style="background-color: linear-gradient(to bottom right, red, yellow);">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>JERIZZ - 220030726</title>
+    <title>JERIZZ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <!-- DataTables -->
   
@@ -49,6 +55,7 @@
             <tr>
                 <th>No</th>
                 <th>Product</th>
+                <th>Picture</th>
                 <th>Size</th>
                 <th>Price</th>
                 <th>Stock</th>
@@ -57,11 +64,11 @@
         </thead>
         <tbody>
             <?php
-            include "../koneksi.php";
             $no = 1;
             $query = "SELECT 
                             tb_produk.id_produk,
                             tb_produk.nama_produk,
+                            tb_produk.foto,
                             tb_size.kd_size,
                             tb_produk.price,
                             tb_produk.stok       
@@ -74,7 +81,7 @@
             <tr>
                 <td> <?php echo $no++ ?></td>
                 <td><?= $row['nama_produk'] ?></td>
-                <!-- <td><img src="img/<?=$row['foto']?>" width="100"></td> -->
+                <td><img src="img/<?=$row['foto']?>" width="100"></td>
                 <td><?= $row['kd_size'] ?></td>
                 <td><?= $row['price'] ?></td>
                 <td><?= $row['stok'] ?></td>
@@ -88,6 +95,7 @@
             <tr>
                 <th>No</th>
                 <th>Product</th>
+                <th>Picture</th>
                 <th>size</th>
                 <th>Price</th>
                 <th>Stock</th>

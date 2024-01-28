@@ -1,5 +1,9 @@
-<?php include 
-"../koneksi.php"
+<?php
+session_start();
+include "../koneksi.php";
+cekSession();
+cekCookies();
+levelAdmin();
 ?>
 <!doctype html>
 <html lang="en">
@@ -56,8 +60,8 @@
         </div>
         <div class="col-sm-10">
             <input type="hidden" name="id" value="<?= $id ?>">
-      <button type="submit" class="btn btn-primary">Kirim</button>
-      <button type="reset" class="btn btn-secondary">Reset</button>
+      <button type="submit" class="btn btn-primary" name="kirim">Kirim</button>
+      <button type="reset" class="btn btn-secondary" name="reset">Reset</button>
     </div>
     </form>
 </div>

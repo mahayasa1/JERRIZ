@@ -3,7 +3,6 @@ session_start();
 include "../koneksi.php";
 cekCookies();
 cekSession();
-levelAdmin();
 
 $kd_size    = $_POST['kd_size'];
 $width      = $_POST['width'];
