@@ -55,7 +55,7 @@ cekCookies();
             <tr>
                 <th>No</th>
                 <th>Product</th>
-                <!-- <th>Picture</th> -->
+                <th>Picture</th>
                 <th>Size</th>
                 <th>Price</th>
                 <th>Stock</th>
@@ -68,7 +68,7 @@ cekCookies();
             $query = "SELECT 
                             tb_produk.id_produk,
                             tb_produk.nama_produk,
-                            -- tb_produk.foto,
+                            tb_produk.foto,
                             tb_size.kd_size,
                             tb_produk.price,
                             tb_produk.stok       
@@ -81,7 +81,7 @@ cekCookies();
             <tr>
                 <td> <?php echo $no++ ?></td>
                 <td><?= $row['nama_produk'] ?></td>
-                <!-- <td><img src="img/<?=$row['foto']?>" width="100"></td> -->
+                <td><img src="img/<?=$row['foto']?>" width="100"></td>
                 <td><?= $row['kd_size'] ?></td>
                 <td><?= $row['price'] ?></td>
                 <td><?= $row['stok'] ?></td>
@@ -95,7 +95,7 @@ cekCookies();
             <tr>
                 <th>No</th>
                 <th>Product</th>
-                <!-- <th>Picture</th> -->
+                <th>Picture</th>
                 <th>size</th>
                 <th>Price</th>
                 <th>Stock</th>

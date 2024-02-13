@@ -8,7 +8,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
-          <a class="nav-link" href="../berada.php">Dashboard</a>
+          <a class="nav-link" href="../beranda.php">Dashboard</a>
         </li> 
         <?php if ($_SESSION['level'] == 0) {?>
         <li class="nav-item">
