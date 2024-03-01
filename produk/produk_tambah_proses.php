@@ -44,38 +44,70 @@ $stok            = $_POST["stok"];
 // //         //   } 
 //    }
 
-header("location: produk.php");
+$sumber = $_FILES['filegambar']['tmp_name'];
 
-if (isset($_POST['kirim'])) {
-        //Cek apakah ada kiriman form dari method post
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $target = 'img/';
 
-            $ekstensi_diperbolehkan	= array('png','jpg','jpeg');
-            $filegambar = $_FILES['filegambar']['name'];
-            $x = explode('.', $filegambar);
-            $ekstensi = strtolower(end($x));
-            $file_tmp = $_FILES['filegambar']['tmp_name'];
+    $nama_gambar = $_FILES['filegambar']['name'];
 
-            if (!empty($filegambar)){
-                if (in_array($ekstensi, $ekstensi_diperbolehkan) === true){
+
+
+$pindah = move_uploaded_file($sumber, $target.$nama_gambar);
+
+if($pindah){
+
+    $query = "INSERT INTO tb_produk (nama_produk,  kd_size, price, stok ,foto)
+                VALUES ('$nama_produk', '$kd_size', '$price', '$stok','$nama_gambar')";
+
+$hasil = mysqli_query($koneksi,$query);
+
+}
+
+if($hasil)
+
+{
+
+header("location:produk.php");
+
+}
+
+else{
+
+    echo "Penyimpanan gagal";
+
+}
+
+
+// if (isset($_POST['kirim'])) {
+//         //Cek apakah ada kiriman form dari method post
+//         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+//             $ekstensi_diperbolehkan	= array('png','jpg','jpeg');
+//             $filegambar = $_FILES['filegambar']['name'];
+//             $x = explode('.', $filegambar);
+//             $ekstensi = strtolower(end($x));
+//             $file_tmp = $_FILES['filegambar']['tmp_name'];
+
+//             if (!empty($filegambar)){
+//                 if (in_array($ekstensi, $ekstensi_diperbolehkan) === true){
     
-                    //Mengupload gambar
-                    move_uploaded_file($file_tmp, 'img/'.$filegambar);
+//                     //Mengupload gambar
+//                     move_uploaded_file($file_tmp, 'img/'.$filegambar);
 
-                    $query = "INSERT INTO tb_produk (nama_produk,  kd_size, price, stok ,foto)
-                              VALUES ('$nama_produk', '$kd_size', '$price', '$stok','$filegambar')";
-                    $data = mysqli_query($koneksi, $query);
+//                     $query = "INSERT INTO tb_produk (nama_produk,  kd_size, price, stok ,foto)
+//                               VALUES ('$nama_produk', '$kd_size', '$price', '$stok','$filegambar')";
+//                     $data = mysqli_query($koneksi, $query);
 
-                    if ($data) {
-                        header("Location:produk.php?add=berhasil");
-                    }
-                    else {
-                        header("Location:produk.php?add=gagal");
-                    }
+//                     if ($data) {
+//                         header("Location:produk.php?add=berhasil");
+//                     }
+//                     else {
+//                         header("Location:produk.php?add=gagal");
+//                     }
                     
-                }
-            }
-        }
+//                 }
+//             }
+//         }
 
-    }
+//     }
 ?>
